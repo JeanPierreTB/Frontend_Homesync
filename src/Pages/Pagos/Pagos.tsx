@@ -1,5 +1,4 @@
 import {useState } from "react"
-import ComponentHeaderBar from "../../Components/HeaderBar";
 import { Departamento } from "../../Intefaces/Departamento";
 import "./Pagos.css";
 
@@ -9,7 +8,8 @@ const PagePagos= ()=>{
         imagen:'https://www.adondevivir.com/noticias/wp-content/uploads/2016/08/depto.jpg',
         cantidaddehabitaciones:2,
         piso:3,
-        aforo:4
+        aforo:4,
+        precio:1200
     });
 
 

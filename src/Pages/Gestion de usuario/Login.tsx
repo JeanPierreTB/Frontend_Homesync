@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './PageLogin.css'; // Asegúrate de crear este archivo CSS
+import './Login.css';
 
 const PageLogin = () => {
     const [username, setUsername] = useState('');
@@ -7,7 +7,6 @@ const PageLogin = () => {
 
     const handleSubmit = (e:any) => {
         e.preventDefault();
-        // Aquí puedes manejar la lógica de inicio de sesión
         console.log('Iniciando sesión con:', { username, password });
     };
 
