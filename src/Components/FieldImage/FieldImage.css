@@ -1,0 +1,16 @@
+.container-fieldimage{
+    display: flex;
+    align-items: center;
+}
+
+.container-fieldimage img{
+    width: 1rem;
+    height: 1rem;
+}
+
+.container-fieldimage .select{
+    border: none;
+    background-color: rgb(218, 213, 213);
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+}

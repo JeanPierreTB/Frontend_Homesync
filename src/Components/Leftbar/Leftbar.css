@@ -1,0 +1,15 @@
+.container-leftbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:2rem;
+    background-color: rgb(218, 213, 213);
+    border-radius: 1rem;
+    padding: 1rem 1rem;
+}
+
+
+.container-leftbar *{
+    cursor: pointer;
+}

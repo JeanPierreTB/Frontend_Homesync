@@ -1,0 +1,11 @@
+.container-pagereservas{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.container-pagereservas-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
