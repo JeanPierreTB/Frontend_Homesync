@@ -9,7 +9,7 @@ const ComponentHeaderBar:React.FC<HeaderbarI>=({nombre})=>{
     return (
         <div className='container-headerbar'>
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnCH_bBSx1qu1A0RvFhJiZw9bkA5XrAhsDvg&s" alt="logo"></img>
-            <h1>{nombre}</h1>
+            <h2>{nombre}</h2>
             <div className='container-iconos'>
                 <FaBell fontSize={24}/>
                 <FaUserCircle fontSize={24}/>

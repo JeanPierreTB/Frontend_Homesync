@@ -1,18 +1,59 @@
 .container-pagos{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:2rem;
+}
+
+.container-info-pagos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 75%;
+    width: 85%;
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+
+}
+
+
+
+
+.container-des{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:2rem;
+
+}
+
+
+#pagoimagen{
+    width: 40rem;
+    height: 20rem;
+}
+
+
+.container-pagos-tarjetas{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.container-pagos .container-des{
+
+.container-pagos-tarjetas-imagen{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:5rem;
+    gap:2rem;
 }
 
-#pagoimagen{
-    width: 60%;
-    height: 10%;
+
+.container-pagos-tarjetas-imagen img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
 }

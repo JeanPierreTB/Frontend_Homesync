@@ -1,9 +1,11 @@
 export interface Departamento{
     id:number,
     imagen:string,
-    cantidaddehabitaciones:number,
+    precio:number,
+    descripcion:string,
+    numero_habitaciones:number,
     piso:number,
     aforo:number,
-    precio:number
+    
 
 }

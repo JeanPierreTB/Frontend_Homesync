@@ -1,0 +1,9 @@
+.container-chabitacion{
+    padding: 0.01rem 0.20rem;
+}
+
+.container-chabitacion img{
+    width: 15rem;
+    height: 8rem;
+    border-radius: 1rem;
+}

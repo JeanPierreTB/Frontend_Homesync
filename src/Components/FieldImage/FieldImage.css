@@ -1,16 +1,21 @@
 .container-fieldimage{
     display: flex;
     align-items: center;
+    background-color: rgb(218, 213, 213);
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    width: 6rem;
 }
 
 .container-fieldimage img{
     width: 1rem;
     height: 1rem;
+    mix-blend-mode: multiply;
 }
 
 .container-fieldimage .select{
     border: none;
-    background-color: rgb(218, 213, 213);
-    padding: 1rem 1rem;
-    border-radius: 1rem;
+    background-color:rgb(218, 213, 213);
+    width: 6rem;
+   
 }
