@@ -1,0 +1,15 @@
+.boton{
+    border: none;
+    background-color: rgb(39, 197, 39);
+    border-radius: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+
+.container-cuentas{
+    display: flex;
+    justify-content: end;
+    gap:1rem;
+    
+}

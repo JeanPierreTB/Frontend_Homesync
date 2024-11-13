@@ -1,0 +1,12 @@
+.container-pageolvidar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container-olvidar-inputs{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+}
