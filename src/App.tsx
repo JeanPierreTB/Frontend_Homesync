@@ -11,6 +11,7 @@ import PageOlvidar from './Pages/Gestion de usuario/Olvidar_contrasena/Olvidar';
 import PageRegistro from './Pages/Gestion de usuario/Registro/Registro';
 import PageAgregar_solicitudes from './Pages/Solicitudes/Agregar_solicitudes/Agregar_solicitudes';
 import PagePagar_solicitud from './Pages/Solicitudes/Pagar_solicitud/Pagar_solicitud';
+import PageCalificar_Servicio from './Pages/Solicitudes/Calificar_servicio/Calificar_servicio';
 
 
 
@@ -30,6 +31,7 @@ function App() {
           <Route path='/solicitudes' element={<PageSolicitudes/>}/>
           <Route path='/agregar-solicitud' element={<PageAgregar_solicitudes/>}/>
           <Route path='/pagar-solicitud' element={<PagePagar_solicitud/>}/>
+          <Route path='/calificar-servicio' element={<PageCalificar_Servicio/>}/>
         </Routes>
       </div>
     </Router>
