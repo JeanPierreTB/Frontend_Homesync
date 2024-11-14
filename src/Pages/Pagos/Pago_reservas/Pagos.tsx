@@ -1,7 +1,7 @@
 import {useEffect, useState } from "react"
-import { Departamento } from "../../Intefaces/Departamento";
+import { Departamento } from "../../../Intefaces/Departamento";
 import "./Pagos.css";
-import ComponentHeaderBar from "../../Components/HeaderBar/HeaderBar";
+import ComponentHeaderBar from "../../../Components/HeaderBar/HeaderBar";
 import { FaArrowCircleLeft } from 'react-icons/fa'; 
 import { useNavigate } from "react-router-dom";
 

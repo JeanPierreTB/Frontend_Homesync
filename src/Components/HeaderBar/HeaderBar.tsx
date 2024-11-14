@@ -14,7 +14,7 @@ const ComponentHeaderBar:React.FC<HeaderbarI>=({nombre})=>{
             <h2>{nombre}</h2>
             <div className='container-iconos'>
                 <FaBell style={{cursor:'pointer'}} fontSize={24} onClick={()=>navigate('/notificaciones')}/>
-                <FaUserCircle style={{cursor:'pointer'}} fontSize={24}/>
+                <FaUserCircle style={{cursor:'pointer'}} fontSize={24} onClick={()=>navigate('/perfil')}/>
             </div>
             
         </div>
