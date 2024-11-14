@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CHabitacion from "../../Components/CHabitacion/CHabitacion";
 import FieldImage from "../../Components/FieldImage/FieldImage";
 import ComponentHeaderBar from "../../Components/HeaderBar/HeaderBar";
 import Leftbar from "../../Components/Leftbar/Leftbar";
 import "./Reservas.css";
+import { LoginI } from "../../Intefaces/LoginI";
 
 const PageReservas = () => {
   const departamentos = [
@@ -37,6 +38,7 @@ const PageReservas = () => {
 
   const itemsPerPage = 8; 
   const [currentPage, setCurrentPage] = useState(1); 
+  const [rol,setrol]=useState<number>();
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
@@ -51,6 +53,20 @@ const PageReservas = () => {
   const handleNextPage = () => {
     if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
+
+  useEffect(()=>{
+    const usuario=localStorage.getItem('usuario');
+    if (usuario !== null) {
+      const usuarioObj: LoginI = JSON.parse(usuario);
+      
+      if (usuarioObj.nombre === "Admin") setrol(0);
+
+      else setrol(1);
+      
+      
+  }
+    
+  },[])
 
   return (
     <div className="container-pagereservas">
@@ -74,7 +90,7 @@ const PageReservas = () => {
       
 
       <div className="container-pagereservas-info">
-        <Leftbar />
+        <Leftbar rol={rol}/>
         <div className="container-pagoreservas-reservas">
           {currentDepartments.map((departamento) => (
             <CHabitacion key={departamento.id} departamento={departamento} />

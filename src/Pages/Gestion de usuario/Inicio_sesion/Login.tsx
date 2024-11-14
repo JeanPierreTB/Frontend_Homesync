@@ -3,10 +3,24 @@ import './Login.css';
 import Textfield from '../../../Components/Textfield/Textfield';
 import Button from '../../../Components/Button/Button';
 import { useNavigate } from 'react-router-dom';
+import { LoginI } from '../../../Intefaces/LoginI';
 
 const PageLogin = () => {
 
     const navigate=useNavigate();
+
+    const [datos,setdatos]=useState<LoginI>({
+        nombre:"",
+        contrasena:""
+    });
+
+    const handleclik=()=>{
+        localStorage.setItem('usuario', JSON.stringify({ nombre: datos.nombre, contrasena: datos.contrasena }));
+        if(datos.nombre==="Admin"){
+            return navigate('/solicitudes');
+        }
+        navigate('/reservas');
+    }
 
     return(
         <div className='container-pagelogin'>
@@ -25,12 +39,12 @@ const PageLogin = () => {
                 </div>
 
                 <div className='container-login-inputs'>
-                    <Textfield placeholder='Usuario' />
-                    <Textfield placeholder='Contraseña' />
+                    <Textfield placeholder='Usuario' value="nombre" onchange={(e)=>setdatos({...datos,nombre:e.target.value})} />
+                    <Textfield placeholder='Contraseña' value='contrasena' onchange={(e)=>setdatos({...datos,contrasena:e.target.value})} />
                 </div>
                 
                 <p id="olvidar" className='color-gray' onClick={()=>navigate('/olvidar')}>¿Olvidaste tu contraseña?</p>
-                <Button nombre='INICIAR SESION' onclick={()=>navigate('/reservas')}/>
+                <Button nombre='INICIAR SESION' onclick={()=>handleclik()}/>
                 <div className='container-cuentas'>
                     <p>No tienes cuenta?</p>
                     <p className='color-gray' onClick={()=>navigate('/registro')}>Create una cuenta</p>

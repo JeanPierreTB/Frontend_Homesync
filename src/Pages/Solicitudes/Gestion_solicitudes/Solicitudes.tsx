@@ -3,13 +3,16 @@ import Button from "../../../Components/Button/Button";
 import ComponentHeaderBar from "../../../Components/HeaderBar/HeaderBar";
 import Leftbar from "../../../Components/Leftbar/Leftbar";
 import "./Solicitudes.css"
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { LoginI } from "../../../Intefaces/LoginI";
 
 const PageSolicitudes =()=>{
 
     const [paginaActual, setPaginaActual] = useState(0);
+    const [rol,setrol]=useState<number>();
     const elementosPorPagina = 5;
     const navigate=useNavigate();
+
 
     const datos = [
         { id: 1, fecha: "30/12/24", descripcion: "Arreglo de cama", estado: 3 },
@@ -32,36 +35,63 @@ const PageSolicitudes =()=>{
     const retrocederPagina = () => {
         if (paginaActual > 0) setPaginaActual(paginaActual - 1);
     };
+    
+
+    useEffect(()=>{
+        const usuario=localStorage.getItem('usuario');
+        if (usuario !== null) {
+          const usuarioObj: LoginI = JSON.parse(usuario);
+          
+          if (usuarioObj.nombre === "Admin") setrol(0);
+    
+          else setrol(1);
+          
+          
+      }
+        
+      },[])
 
     
     return(
         <div className="container-pagesolicitudes">
             <ComponentHeaderBar nombre="Gestion de solicitudes"/>
-            <div className="container-boton-solicitudes">
-                <Button nombre="Solicitar" onclick={()=>navigate('/agregar-solicitud')} />
-            </div>
+            {rol===1?
+            (
+                <>
+                
+                    <div className="container-boton-solicitudes">
+                    <Button nombre="Solicitar" onclick={()=>navigate('/agregar-solicitud')} />
+                </div>
+                
+                <div className="container-leyenda">
+                    <div className="container-leyenda-color">
+                        <img className="imagen-leyenda" src="https://static.vecteezy.com/system/resources/thumbnails/016/314/339/small/red-circle-red-dot-icon-free-png.png" alt="rojo"></img>
+                        <p><strong>Pago Alto</strong></p>
+                    </div>
+
+                    <div className="container-leyenda-color">
+                        <img className="imagen-leyenda" src="https://png.pngtree.com/png-clipart/20201029/ourmid/pngtree-circle-clipart-green-circle-png-image_2382000.jpg" alt="verde"></img>
+                        <p><strong>Pago Estandar</strong></p>
+                    </div>
+
+                    <div className="container-leyenda-color">
+                        <img className="imagen-leyenda" src="https://i.pinimg.com/736x/ca/d7/4d/cad74db34eeefbb864673aa33747407b.jpg" alt="amarillo"></img>
+                        <p><strong>Pendiente de pago</strong></p>
+                    </div>
+
+                    <div className="container-leyenda-color">
+                        <img className="imagen-leyenda" src="https://cdn-icons-png.flaticon.com/512/0/14.png" alt="negro"></img>
+                        <p><strong>Culminado</strong></p>
+                    </div>
+                </div>
+            </>
+            ):(
+                <>
+                </>
+            )
+        
+            }
             
-            <div className="container-leyenda">
-                <div className="container-leyenda-color">
-                    <img className="imagen-leyenda" src="https://static.vecteezy.com/system/resources/thumbnails/016/314/339/small/red-circle-red-dot-icon-free-png.png" alt="rojo"></img>
-                    <p><strong>Pago Alto</strong></p>
-                </div>
-
-                <div className="container-leyenda-color">
-                    <img className="imagen-leyenda" src="https://png.pngtree.com/png-clipart/20201029/ourmid/pngtree-circle-clipart-green-circle-png-image_2382000.jpg" alt="verde"></img>
-                    <p><strong>Pago Estandar</strong></p>
-                </div>
-
-                <div className="container-leyenda-color">
-                    <img className="imagen-leyenda" src="https://i.pinimg.com/736x/ca/d7/4d/cad74db34eeefbb864673aa33747407b.jpg" alt="amarillo"></img>
-                    <p><strong>Pendiente de pago</strong></p>
-                </div>
-
-                <div className="container-leyenda-color">
-                    <img className="imagen-leyenda" src="https://cdn-icons-png.flaticon.com/512/0/14.png" alt="negro"></img>
-                    <p><strong>Culminado</strong></p>
-                </div>
-            </div>
 
             <div className="paginacion">
                         <button onClick={retrocederPagina} disabled={paginaActual === 0}>Anterior</button>
@@ -70,16 +100,32 @@ const PageSolicitudes =()=>{
             </div>
 
             <div className="container-solicitudes-info">
-                <Leftbar/>
+                <Leftbar rol={rol}/>
 
                 <div className="container-table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Fecha</th>
-                                <th>Descripcion</th>
-                                <th>Estado</th>
-                                <th></th>
+                                {rol===1?
+                                (
+                                    <>
+                                        <th>Fecha</th>
+                                        <th>Descripcion</th>
+                                        <th>Estado</th>
+                                        <th></th>
+                                    </>
+                                    
+                                ):(
+                                    <>
+                                        <th>Usuario</th>
+                                        <th>Fecha</th>
+                                        <th>Descripcion</th>
+                                        <th></th>
+                                    </>
+                                )
+                            
+                            }
+                                
                             </tr>
                         </thead>
                         
