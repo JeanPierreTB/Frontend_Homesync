@@ -30,7 +30,7 @@ const PageLogin = () => {
                 </div>
                 
                 <p id="olvidar" className='color-gray' onClick={()=>navigate('/olvidar')}>¿Olvidaste tu contraseña?</p>
-                <Button nombre='INICIAR SESION'/>
+                <Button nombre='INICIAR SESION' onclick={()=>navigate('/reservas')}/>
                 <div className='container-cuentas'>
                     <p>No tienes cuenta?</p>
                     <p className='color-gray' onClick={()=>navigate('/registro')}>Create una cuenta</p>

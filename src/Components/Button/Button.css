@@ -1,9 +1,10 @@
 .boton{
     border: none;
-    background-color: rgb(39, 197, 39);
+    background-color: #4CAF50;
     border-radius: 1rem;
     padding: 1rem;
     cursor: pointer;
+    color: white;
 }
 
 

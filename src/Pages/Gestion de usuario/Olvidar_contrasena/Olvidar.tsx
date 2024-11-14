@@ -17,7 +17,7 @@ const PageOlvidar=()=>{
                 <div className="container-olvidar-inputs">
                     <Textfield placeholder="Correo Electronico"/>
                     <Textfield placeholder="Nueva contraseña"/>
-                    <Button nombre="CAMBIAR CONTRASEÑA" />
+                    <Button nombre="CAMBIAR CONTRASEÑA" onclick={()=>navigate('/')}/>
                 </div>
                 
                 

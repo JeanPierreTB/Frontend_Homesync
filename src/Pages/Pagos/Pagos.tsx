@@ -37,7 +37,7 @@ const PagePagos= ()=>{
         <div className="container-pagos">
             <ComponentHeaderBar nombre="Alquilar departamento"/>
             <div className="container-info-pagos">
-                <FaArrowLeft style={{cursor:'pointer'}} size={30} onClick={()=>navigate('/')} />
+                <FaArrowLeft style={{cursor:'pointer'}} size={30} onClick={()=>navigate('/reservas')} />
                 <div className="container-des">
                 <img id="pagoimagen" src={departamento.imagen} alt={"Codigo " + departamento.id.toString()}></img>
 

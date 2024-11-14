@@ -2,9 +2,9 @@ import React from "react";
 import "./Button.css"
 import { ButtonI } from "../../Intefaces/ButtonI";
 
-const Button:React.FC<ButtonI>=({nombre})=>{
+const Button:React.FC<ButtonI>=({nombre,onclick})=>{
     return (
-        <button className="boton">{nombre}</button>
+        <button className="boton" onClick={onclick}>{nombre}</button>
     )
 }
 

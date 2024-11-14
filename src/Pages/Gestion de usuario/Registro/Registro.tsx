@@ -16,7 +16,7 @@ const PageRegistro=()=>{
                 <Textfield placeholder="Correo electronico"/>
                 <Textfield placeholder="Contraseña"/>
                 <Textfield placeholder="Telefono"/>
-                <Button nombre="REGISTRATE"/>
+                <Button nombre="REGISTRATE" onclick={()=>navigate('/')}/>
             </div>
 
             <div className="container-registro-texto">
