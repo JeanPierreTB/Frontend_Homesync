@@ -16,7 +16,7 @@ const PagePagar_solicitud=()=>{
                     <div className="container-pagepagar-solicitud-datos1">
                         <p><strong>Fecha de solicitud:</strong> 4/7/24</p>
                         <p><strong>Descripcion:</strong> Se esta presentando probelmas ultimanente con la luz,se apaga y se prende por momenetos</p>
-                        <p><strong>Prestado de servicio:</strong> Luis Carlos Jose</p>
+                        <p><strong>Tipo:</strong> Reparacion</p>
                         <p><strong>Estado:</strong> No pagado</p>
                     </div>
 

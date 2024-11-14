@@ -106,7 +106,7 @@ const PageSolicitudes =()=>{
 
                                     <td style={{cursor:'pointer'}}>
                                         {dato.estado === 1 || dato.estado === 2 ? (
-                                            <strong >Ver detalles</strong>
+                                            <strong onClick={()=>navigate('/ver-detalles')} >Ver detalles</strong>
                                         ) : dato.estado === 3 ? (
                                             <strong onClick={()=>navigate('/pagar-solicitud')} >Pagar solicitud</strong>
                                         ) : dato.estado === 4 ? (

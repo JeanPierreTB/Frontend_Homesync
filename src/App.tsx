@@ -12,6 +12,7 @@ import PageRegistro from './Pages/Gestion de usuario/Registro/Registro';
 import PageAgregar_solicitudes from './Pages/Solicitudes/Agregar_solicitudes/Agregar_solicitudes';
 import PagePagar_solicitud from './Pages/Solicitudes/Pagar_solicitud/Pagar_solicitud';
 import PageCalificar_Servicio from './Pages/Solicitudes/Calificar_servicio/Calificar_servicio';
+import PageDetalles_solicitudes from './Pages/Solicitudes/Detalles_solicitudes/Detalles_solicitudes';
 
 
 
@@ -32,6 +33,7 @@ function App() {
           <Route path='/agregar-solicitud' element={<PageAgregar_solicitudes/>}/>
           <Route path='/pagar-solicitud' element={<PagePagar_solicitud/>}/>
           <Route path='/calificar-servicio' element={<PageCalificar_Servicio/>}/>
+          <Route path='/ver-detalles' element={<PageDetalles_solicitudes/>}/>
         </Routes>
       </div>
     </Router>

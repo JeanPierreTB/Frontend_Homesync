@@ -36,6 +36,13 @@
 
 }
 
+.container-pagepagar-solicitud-datos1 p{
+    font-size: 20px;
+}
+
+.container-pagepagar-solicitud-datos2 p{
+    font-size: 20px;
+}
 .container-pagepagar-solicitud-datos2{
     display: flex;
     flex-direction: column;
