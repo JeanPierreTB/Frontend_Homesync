@@ -15,7 +15,7 @@ const PageSolicitudes =()=>{
         { id: 1, fecha: "30/12/24", descripcion: "Arreglo de cama", estado: 3 },
         { id: 2, fecha: "28/12/24", descripcion: "Adicion de ropero", estado: 2 },
         { id: 3, fecha: "27/12/24", descripcion: "Arreglo de baño", estado: 1 },
-        { id: 4, fecha: "27/12/24", descripcion: "Arreglo de baño", estado: 1 },
+        { id: 4, fecha: "27/12/24", descripcion: "Arreglo de baño", estado: 4 },
         { id: 5, fecha: "27/12/24", descripcion: "Arreglo de baño", estado: 1 },
         { id: 6, fecha: "27/12/24", descripcion: "Arreglo de baño", estado: 1 },
         { id: 7, fecha: "26/12/24", descripcion: "Pintura de habitación", estado: 2 },
@@ -56,6 +56,11 @@ const PageSolicitudes =()=>{
                     <img className="imagen-leyenda" src="https://i.pinimg.com/736x/ca/d7/4d/cad74db34eeefbb864673aa33747407b.jpg" alt="amarillo"></img>
                     <p><strong>Pendiente de pago</strong></p>
                 </div>
+
+                <div className="container-leyenda-color">
+                    <img className="imagen-leyenda" src="https://cdn-icons-png.flaticon.com/512/0/14.png" alt="negro"></img>
+                    <p><strong>Culminado</strong></p>
+                </div>
             </div>
 
             <div className="paginacion">
@@ -93,9 +98,21 @@ const PageSolicitudes =()=>{
                                         {dato.estado === 3 && (
                                             <img  src="https://i.pinimg.com/736x/ca/d7/4d/cad74db34eeefbb864673aa33747407b.jpg" alt="Pendiente de Pago" style={{width:'1.8rem',height:'1.8rem'}} />
                                         )}
+                                        {dato.estado===4 && (
+                                            <img  src="https://cdn-icons-png.flaticon.com/512/0/14.png" alt="Culminado" style={{width:'1.5rem',height:'1.5rem'}} />
+
+                                        )}
                                     </td>
 
-                                    <td><strong>Ver detalles</strong></td>
+                                    <td style={{cursor:'pointer'}}>
+                                        {dato.estado === 1 || dato.estado === 2 ? (
+                                            <strong>Ver detalles</strong>
+                                        ) : dato.estado === 3 ? (
+                                            <strong>Pagar solicitud</strong>
+                                        ) : dato.estado === 4 ? (
+                                            <strong>Calificar servicio</strong>
+                                        ) : null}
+                                    </td>
                                 </tr>
                             ))}
                         

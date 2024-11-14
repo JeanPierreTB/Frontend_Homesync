@@ -4,7 +4,7 @@
     background-color: rgb(218, 213, 213);
     padding: 1rem 1rem;
     border-radius: 1rem;
-    width: 6rem;
+    gap:1rem;
 }
 
 .container-fieldimage img{
@@ -16,6 +16,5 @@
 .container-fieldimage .select{
     border: none;
     background-color:rgb(218, 213, 213);
-    width: 6rem;
    
 }

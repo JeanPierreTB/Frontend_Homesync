@@ -10,6 +10,7 @@ import PageSolicitudes from './Pages/Solicitudes/Gestion_solicitudes/Solicitudes
 import PageOlvidar from './Pages/Gestion de usuario/Olvidar_contrasena/Olvidar';
 import PageRegistro from './Pages/Gestion de usuario/Registro/Registro';
 import PageAgregar_solicitudes from './Pages/Solicitudes/Agregar_solicitudes/Agregar_solicitudes';
+import PagePagar_solicitud from './Pages/Solicitudes/Pagar_solicitud/Pagar_solicitud';
 
 
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/reservas' element={<PageReservas/>}/>
           <Route path='/solicitudes' element={<PageSolicitudes/>}/>
           <Route path='/agregar-solicitud' element={<PageAgregar_solicitudes/>}/>
+          <Route path='/pagar-solicitud' element={<PagePagar_solicitud/>}/>
         </Routes>
       </div>
     </Router>

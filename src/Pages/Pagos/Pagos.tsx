@@ -2,7 +2,7 @@ import {useEffect, useState } from "react"
 import { Departamento } from "../../Intefaces/Departamento";
 import "./Pagos.css";
 import ComponentHeaderBar from "../../Components/HeaderBar/HeaderBar";
-import { FaArrowLeft } from 'react-icons/fa'; 
+import { FaArrowCircleLeft } from 'react-icons/fa'; 
 import { useNavigate } from "react-router-dom";
 
 
@@ -37,7 +37,7 @@ const PagePagos= ()=>{
         <div className="container-pagos">
             <ComponentHeaderBar nombre="Alquilar departamento"/>
             <div className="container-info-pagos">
-                <FaArrowLeft style={{cursor:'pointer'}} size={30} onClick={()=>navigate('/reservas')} />
+                <FaArrowCircleLeft style={{cursor:'pointer'}} size={30} onClick={()=>navigate('/reservas')} />
                 <div className="container-des">
                 <img id="pagoimagen" src={departamento.imagen} alt={"Codigo " + departamento.id.toString()}></img>
 
