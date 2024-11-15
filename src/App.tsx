@@ -14,6 +14,7 @@ import PageCalificar_Servicio from './Pages/Solicitudes/Calificar_servicio/Calif
 import PageDetalles_solicitudes from './Pages/Solicitudes/Detalles_solicitudes/Detalles_solicitudes';
 import PagePerfil from './Pages/Gestion de usuario/Perfil/Perfil';
 import PagePagar_solicitud from './Pages/Pagos/Pago_solicitud/Pagar_solicitud';
+import PageProveedores from './Pages/Solicitudes/Proveedores/Proveedores';
 
 
 
@@ -38,6 +39,7 @@ function App() {
           <Route path='/pagar-solicitud' element={<PagePagar_solicitud/>}/>
           <Route path='/calificar-servicio' element={<PageCalificar_Servicio/>}/>
           <Route path='/ver-detalles' element={<PageDetalles_solicitudes/>}/>
+          <Route path='/proveedores' element={<PageProveedores/>}/>
         </Routes>
       </div>
     </Router>

@@ -11,6 +11,9 @@
     align-items: center;
     justify-content: end;
 }
+.container-div-barra{
+    margin-top: 3rem;
+}
 
 
 .container-boton-solicitudes *{

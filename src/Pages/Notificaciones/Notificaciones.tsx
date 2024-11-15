@@ -40,7 +40,6 @@ const PageNotificaciones = () => {
     const totalPages = Math.ceil(datos.length / itemsPerPage);
     const paginatedData = datos.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
 
-    // Funciones para avanzar y retroceder de página
     const handleNextPage = () => {
         if (currentPage < totalPages - 1) setCurrentPage(currentPage + 1);
     };
@@ -52,7 +51,7 @@ const PageNotificaciones = () => {
     return (
         <div className="container-notificaciones">
             <ComponentHeaderBar nombre="Notificaciones" />
-            <FaArrowCircleLeft style={{ cursor: 'pointer' }} onClick={() => navigate('/reservas')} size={30} />
+            <FaArrowCircleLeft style={{ cursor: 'pointer' }} onClick={() => navigate('/solicitudes')} size={30} />
 
             <div className="pagination">
                 <button onClick={handlePreviousPage} disabled={currentPage === 0}>Anterior</button>

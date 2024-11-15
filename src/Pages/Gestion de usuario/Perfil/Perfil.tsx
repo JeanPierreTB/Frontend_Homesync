@@ -14,7 +14,7 @@ const PagePerfil=()=>{
         <div className="container-pageperfil">
             <ComponentHeaderBar nombre="Perfil del usuario" />
             <div className="left">
-                <FaArrowCircleLeft  onClick={()=>navigate('/reservas')} size={30} />
+                <FaArrowCircleLeft  onClick={()=>navigate('/solicitudes')} size={30} />
             </div>
             <div className="container-pagperfil-info">
                 <div className="container-pagperfil-datos1">
@@ -26,7 +26,7 @@ const PagePerfil=()=>{
 
                 <div className="container-pagperfil-datos2">
                     <img src="https://concepto.de/wp-content/uploads/2018/08/persona-e1533759204552.jpg" alt="persona"></img>
-                    <Button nombre="ACTUALIZAR" onclick={()=>navigate('/reservas')}/>
+                    <Button nombre="ACTUALIZAR" onclick={()=>navigate('/solicitudes')}/>
                 </div>
                 
                 
