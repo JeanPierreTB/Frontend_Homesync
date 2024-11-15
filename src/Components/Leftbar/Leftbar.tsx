@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./Leftbar.css";
-import { FaCalendarAlt,FaCog,FaUsers,FaSignOutAlt, FaChartBar, FaBuilding,FaClipboardList} from 'react-icons/fa';
+import { FaCalendarAlt,FaCog,FaUsers,FaSignOutAlt, FaChartBar, FaBuilding,FaClipboardList, FaUser} from 'react-icons/fa';
 import { useEffect } from "react";
 
 interface LeftbarProps {
@@ -17,6 +17,9 @@ const Leftbar:React.FC<LeftbarProps>=({rol})=>{
         localStorage.removeItem('usuario');
         navigate('/')
     }
+
+    
+    
     
     return (
         <div className="container-leftbar">
@@ -28,6 +31,13 @@ const Leftbar:React.FC<LeftbarProps>=({rol})=>{
                     <FaSignOutAlt size={size} onClick={handleclik} /> 
                 </>
                 
+            ): rol===2? (
+                <>
+                <FaClipboardList size={size} onClick={()=>navigate('/solicitudes')} />
+                <FaUser size={size} onClick={()=>navigate('/perfil')} />
+                <FaSignOutAlt size={size} onClick={handleclik} /> 
+
+                </>
             ):(
                 <>
                     <FaClipboardList size={size} onClick={()=>navigate('/solicitudes')} />

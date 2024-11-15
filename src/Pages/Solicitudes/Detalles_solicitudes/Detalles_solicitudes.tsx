@@ -5,6 +5,7 @@ import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { LoginI } from "../../../Intefaces/LoginI";
 import Button from "../../../Components/Button/Button";
+import Textfield from "../../../Components/Textfield/Textfield";
 
 
 const PageDetalles_solicitudes=()=>{
@@ -48,17 +49,19 @@ const PageDetalles_solicitudes=()=>{
         if (usuario !== null) {
           const usuarioObj: LoginI = JSON.parse(usuario);
           
-          if (usuarioObj.nombre === "Admin") setrol(0);
-    
+          if (usuarioObj.nombre === "Admin") setrol(0)
+
+          else if(usuarioObj.nombre==="Servicio") setrol(2);
+          
           else setrol(1);
-          
-          
+
+                  
       }
     },[]);
 
     const Pagecontenido = () => {
         if (rol === undefined) {
-            return null;
+            return null; // Si 'rol' no está definido, no se renderiza nada
         }
     
         return (
@@ -75,6 +78,28 @@ const PageDetalles_solicitudes=()=>{
                         <img src="https://img.freepik.com/fotos-premium/electricista-esta-reparando-luces-departamento-recientemente-renovado_114016-5972.jpg" alt="Reparación de luz" />
                     </div>
                 </>
+            ) : rol === 2 ? (
+                <>
+                <div className="container-detalles-solicitudes-datos1">
+                    <p><strong>Fecha de solicitud:</strong> 4/7/24</p>
+                    <p><strong>Descripcion:</strong> Se está presentando problemas últimamente con la luz, se apaga y se prende por momentos</p>
+                    <Textfield placeholder="Fecha atención" />
+                    <Textfield placeholder="Precio" />
+                    
+                    
+                </div>
+
+                <div style={{width:'30%'}} className="container-detalles-solicitudes-datos2">
+                <textarea className="request-textarea-proveedor" placeholder="Pon los detalles..."></textarea>
+
+                    <div className="container-detalles-solicitudes-proveedor-botones">
+                        <Button nombre="RECHAZAR" color="red" onclick={() => alert("Rechazado")} />
+                        <Button nombre="ACEPTAR" onclick={() => alert("Aceptado")} />
+                    </div>
+                    
+                </div>
+                </>
+                
             ) : (
                 <>
                     <div className="container-detalles-solicitudes-datos1">
@@ -83,12 +108,10 @@ const PageDetalles_solicitudes=()=>{
                         <div className="container-detalles-solicitudes-datos1-tipo">
                             <p><strong>Tipos de pago</strong></p>
                         </div>
-                        
                         <div className="container-detalles-solicitudes-datos1-botones">
                             <Button nombre="Precio estándar" onclick={() => navigate('/proveedores')} />
                             <Button nombre="Precio Alto" onclick={() => navigate('/proveedores')} color="red" />
                         </div>
-                        
                     </div>
                     <div className="container-detalles-solicitudes-datos2">
                         <p><strong>Lista de anteriores solicitudes</strong></p>
@@ -117,6 +140,7 @@ const PageDetalles_solicitudes=()=>{
             )
         );
     };
+    
     
 
     return(

@@ -16,9 +16,10 @@ const PageLogin = () => {
 
     const handleclik=()=>{
         localStorage.setItem('usuario', JSON.stringify({ nombre: datos.nombre, contrasena: datos.contrasena }));
-        if(datos.nombre==="Admin"){
+        if(datos.nombre==="Admin" || datos.nombre==="Servicio"){
             return navigate('/solicitudes');
         }
+        
         navigate('/reservas');
     }
 

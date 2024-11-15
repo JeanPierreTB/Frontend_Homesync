@@ -43,7 +43,9 @@ const PageSolicitudes =()=>{
           const usuarioObj: LoginI = JSON.parse(usuario);
           
           if (usuarioObj.nombre === "Admin") setrol(0);
-    
+          
+          else if(usuarioObj.nombre==="Servicio") setrol(2);
+          
           else setrol(1);
           
           
@@ -208,8 +210,6 @@ const PageSolicitudes =()=>{
 };
 
 
-      
-     
          
 
 
@@ -235,9 +235,6 @@ const PageSolicitudes =()=>{
                     <table>
                         
                         {Headertable()}
-                                
-                            
-                        
                        {BodyTable()}
                            
                     </table>

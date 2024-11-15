@@ -61,12 +61,40 @@
 }
 
 
-.paginacion{
+.container-pagoprovedores-paginacion{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
+
+.container-pagoprovedores-paginacion1 {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.container-pagoprovedores-paginacion1 button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.container-pagoprovedores-paginacion1 button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.container-pagoprovedores-paginacion1 span {
+    font-size: 1rem;
+}
+
+
 
 
 .calificacion-estrellas {

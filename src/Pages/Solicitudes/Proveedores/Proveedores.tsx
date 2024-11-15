@@ -61,14 +61,14 @@ const PageProveedores = () => {
 
                 <Button nombre="Recomendar Proveedor" onclick={() => alert("Proveedor recomendado")} />
             </div>
-            <div className="paginacion">
+            <div className="container-pagoprovedores-paginacion">
                 <FieldImage imagen="https://cdn-icons-png.flaticon.com/512/94/94948.png" des="Estresllas" opciones={["1","2","3","4","5"]} />
                 <FieldImage imagen="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHhjyjoKCNazgusbOIBf6XTCnpntFuXDf6HranggUxcISFnyLGUKRgOjHHbvzHo5OBDuI&usqp=CAU" des="Disponible" opciones={["Disponible","No disponible"]}/>
                 <FieldImage imagen="https://cdn-icons-png.flaticon.com/512/87/87727.png" des="Especialista" opciones={["Electricidad","Instalacion","Pintura"]}/>
-                <div>
-                <button onClick={paginaAnterior} disabled={paginaActual === 1}>Anterior</button>
-                <span>Página {paginaActual} de {Math.ceil(datos.length / elementosPorPagina)}</span>
-                <button onClick={paginaSiguiente} disabled={paginaActual === Math.ceil(datos.length / elementosPorPagina)}>Siguiente</button>
+                <div className="container-pagoprovedores-paginacion1">
+                    <button onClick={paginaAnterior} disabled={paginaActual === 1}>Anterior</button>
+                    <span>Página {paginaActual} de {Math.ceil(datos.length / elementosPorPagina)}</span>
+                    <button onClick={paginaSiguiente} disabled={paginaActual === Math.ceil(datos.length / elementosPorPagina)}>Siguiente</button>
                 </div>
                 
             </div>
