@@ -1,53 +1,13 @@
-.container-pagesolicitudes{
+.container-pageactualizar-departamento{
     width: 95%;
     height: 100%;
     display: flex;
     flex-direction: column;
-}
-
-
-.container-boton-solicitudes{
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
-.container-div-barra{
-    margin-top: 3rem;
-}
-
-
-.container-boton-solicitudes *{
-    width: 10%;
-}
-
-
-.container-leyenda{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-
-.container-leyenda-color {
-    display: flex;
-    align-items: center;
     gap:1rem;
 }
 
 
-.imagen-leyenda{
-    width: 2rem;
-    height: 2rem;
-}
-
-
-.container-solicitudes-info{
-    display: flex;
-    gap:2rem;
-}
-
-
-.container-table{
+.container-table-pageactualizar-departamento{
     width: 100%;
     height: 100%;
     display: flex;
@@ -55,7 +15,7 @@
     justify-content: center;
 }
 
-.container-table table {
+.container-table-pageactualizar-departamento table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
@@ -66,40 +26,39 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.container-table table th {
+.container-table-pageactualizar-departamento table th {
     background-color: #4CAF50;
     color: white;
     padding: 1rem;
     font-weight: bold;
 }
 
-.container-table table td, .container-table table th {
+.container-table-pageactualizar-departamento table td, .container-table-pageactualizar-departamento table th {
     padding: 1rem;
     border-bottom: 1px solid #ddd;
 }
 
-.container-table table tr:nth-child(odd) {
+.container-table-pageactualizar-departamento table tr:nth-child(odd) {
     background-color: #f2f2f2;
 }
 
-.container-table table tr:hover {
+.container-table-pageactualizar-departamento table tr:hover {
     background-color: #e6f7ff;
 }
 
-.container-table table td {
+.container-table-pageactualizar-departamento table td {
     color: #333;
 }
 
 
-
-
-.paginacion-pagesolicitudes {
+.paginacion-pageactualizar-departamento{
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: space-between;
 }
 
-.paginacion-pagesolicitudes button {
+
+.paginacion-pageactualizar-departamento button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     color: #fff;
@@ -110,11 +69,11 @@
     transition: background-color 0.3s;
 }
 
-.paginacion-pagesolicitudes button:disabled {
+.paginacion-pageactualizar-departamento button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
 
-.paginacion-pagesolicitudes span {
+.paginacion-pageactualizar-departamento span {
     font-size: 1rem;
 }

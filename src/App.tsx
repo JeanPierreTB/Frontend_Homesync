@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import PageCapital from './Pages/Gestion de capital/Capital';
+import PageCapital from './Pages/Gestion de capital/Capital/Capital';
 import PageLogin from './Pages/Gestion de usuario/Inicio_sesion/Login';
 import PageJunta from './Pages/Junta de inquilinos/Junta';
 import PageNotificaciones from './Pages/Notificaciones/Notificaciones';
@@ -15,6 +15,9 @@ import PageDetalles_solicitudes from './Pages/Solicitudes/Detalles_solicitudes/D
 import PagePerfil from './Pages/Gestion de usuario/Perfil/Perfil';
 import PagePagar_solicitud from './Pages/Pagos/Pago_solicitud/Pagar_solicitud';
 import PageProveedores from './Pages/Solicitudes/Proveedores/Proveedores';
+import PageEditar_departamento from './Pages/Gestion de capital/Agregar_departamento/Editar_departamento';
+import PageActualizar_departamento from './Pages/Gestion de capital/Lista_departamento/Actualizar_departamento';
+import PageModificar_Departamento from './Pages/Gestion de capital/Modificar_departamento/Modificar_departamento';
 
 
 
@@ -30,6 +33,9 @@ function App() {
           <Route path='/registro' element={<PageRegistro/>}/>
           <Route path='/perfil' element={<PagePerfil/>}/>
           <Route path='/capital' element={<PageCapital/>}/>
+          <Route path='/lista-departamento' element={<PageActualizar_departamento/>}/>
+          <Route path='/agregar-departamento' element={<PageEditar_departamento/>}/>
+          <Route path='/modificar-departamento' element={<PageModificar_Departamento/>}/>
           <Route path='/junta' element={<PageJunta/>}/>
           <Route path='/notificaciones' element={<PageNotificaciones/>}/>
           <Route path="/pagos" element={<PagePagos />} />

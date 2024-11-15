@@ -222,7 +222,7 @@ const PageSolicitudes =()=>{
             <ComponentHeaderBar nombre="Gestion de solicitudes"/>
             
              {BarraFiltros()}
-            <div className="paginacion">
+            <div className="paginacion-pagesolicitudes">
                         <button onClick={retrocederPagina} disabled={paginaActual === 0}>Anterior</button>
                         <span>Página {paginaActual + 1} de {totalPaginas}</span>
                         <button onClick={avanzarPagina} disabled={paginaActual === totalPaginas - 1}>Siguiente</button>

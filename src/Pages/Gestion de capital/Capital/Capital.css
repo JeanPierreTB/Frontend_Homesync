@@ -1,0 +1,29 @@
+.container-capital{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+}
+
+
+.filtros-container-capital{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+
+.contenido-container-capital{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:2rem;
+}
+
+
+.container-capital-gastos img ,.container-capital-visitas img{
+    width: 35rem;
+    height: 23rem;
+}

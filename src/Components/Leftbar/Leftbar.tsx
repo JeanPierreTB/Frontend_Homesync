@@ -32,7 +32,7 @@ const Leftbar:React.FC<LeftbarProps>=({rol})=>{
                 <>
                     <FaClipboardList size={size} onClick={()=>navigate('/solicitudes')} />
                     <FaChartBar size={size} onClick={()=>navigate('/capital')}/>
-                    <FaBuilding size={size}  />
+                    <FaBuilding size={size} onClick={()=>navigate('/agregar-departamento')} />
                     <FaSignOutAlt size={size} onClick={handleclik} /> 
                 </>
             )}
