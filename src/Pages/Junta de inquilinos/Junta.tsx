@@ -4,8 +4,13 @@ import ComponentHeaderBar from '../../Components/HeaderBar/HeaderBar';
 import Leftbar from '../../Components/Leftbar/Leftbar';
 import { useEffect ,useState} from 'react';
 import { LoginI } from '../../Intefaces/LoginI';
+import Chat from '../../Components/Chat_inquilino/Chat';
+
+
 
 const PageJunta = () => {
+
+
  
   const [rol,setrol]=useState<number>();
   const YOUR_DOMAIN = "meet.jit.si"; 
@@ -31,7 +36,6 @@ const PageJunta = () => {
       <ComponentHeaderBar nombre='Pagina de chat con inquilinos' />
       <div className='container-video' style={{width:'80rem',height:'30rem',display:'flex',alignItems:'center',gap:'2rem'}}>
         <Leftbar rol={rol} />
-
         <div className='container-jist'>
             <JitsiMeeting
                 domain={YOUR_DOMAIN}
