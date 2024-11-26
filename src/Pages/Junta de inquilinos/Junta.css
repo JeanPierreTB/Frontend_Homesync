@@ -1,0 +1,18 @@
+.container-junta{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container-jist{
+    
+    width: 100rem;
+    height: 25rem;
+}
+
+
+

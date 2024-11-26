@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./Leftbar.css";
 import { FaCalendarAlt,FaCog,FaUsers,FaSignOutAlt, FaChartBar, FaBuilding,FaClipboardList, FaUser} from 'react-icons/fa';
-import { useEffect } from "react";
 
 interface LeftbarProps {
     rol?: number | undefined;
@@ -27,7 +26,7 @@ const Leftbar:React.FC<LeftbarProps>=({rol})=>{
                 <>
                     <FaCalendarAlt size={size} onClick={()=>navigate('/reservas')} />
                     <FaClipboardList size={size} onClick={()=>navigate('/solicitudes')}/>
-                    <FaUsers size={size}  />
+                    <FaUsers size={size} onClick={()=>navigate('/junta')}  />
                     <FaSignOutAlt size={size} onClick={handleclik} /> 
                 </>
                 
