@@ -23,7 +23,7 @@
 }
 
 
-.container-capital-gastos img ,.container-capital-visitas img{
-    width: 35rem;
-    height: 23rem;
+.container-capital-gastos ,.container-capital-visitas {
+   width: 35rem;
+   height: 20rem;
 }
