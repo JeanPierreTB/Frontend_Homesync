@@ -40,11 +40,11 @@ const PageSolicitudes =()=>{
     useEffect(()=>{
         const usuario=localStorage.getItem('usuario');
         if (usuario !== null) {
-          const usuarioObj: LoginI = JSON.parse(usuario);
+          const usuarioObj= JSON.parse(usuario);
           
-          if (usuarioObj.nombre === "Admin") setrol(0);
+          if (usuarioObj.rol === "Admin") setrol(0);
           
-          else if(usuarioObj.nombre==="Servicio") setrol(2);
+          else if(usuarioObj.rol==="Proveedor") setrol(2);
           
           else setrol(1);
           

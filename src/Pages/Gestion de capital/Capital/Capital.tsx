@@ -35,8 +35,8 @@ const PageCapital = () => {
   useEffect(() => {
     const usuario = localStorage.getItem("usuario");
     if (usuario !== null) {
-      const usuarioObj: LoginI = JSON.parse(usuario);
-      if (usuarioObj.nombre === "Admin") setRol(0);
+      const usuarioObj= JSON.parse(usuario);
+      if (usuarioObj.rol === "Admin") setRol(0);
       else setRol(1);
     }
 

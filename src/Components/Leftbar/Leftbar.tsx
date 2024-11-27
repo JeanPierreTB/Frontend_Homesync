@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./Leftbar.css";
-import { FaCalendarAlt,FaCog,FaUsers,FaSignOutAlt, FaChartBar, FaBuilding,FaClipboardList, FaUser} from 'react-icons/fa';
+import { FaCalendarAlt,FaUsers,FaSignOutAlt, FaChartBar, FaBuilding,FaClipboardList, FaUser} from 'react-icons/fa';
 
 interface LeftbarProps {
     rol?: number | undefined;

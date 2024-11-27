@@ -4,6 +4,9 @@ import Textfield from '../../../Components/Textfield/Textfield';
 import Button from '../../../Components/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import { LoginI } from '../../../Intefaces/LoginI';
+import {IniciarsesionCliente } from '../../../services/InicarsesionCliente';
+import { IniciarsesionAdmin } from '../../../services/IniciarsesionAdmin';
+import { IniciarsesionProveedor } from '../../../services/IniciarsesionProveedor';
 
 const PageLogin = () => {
 
@@ -14,14 +17,35 @@ const PageLogin = () => {
         contrasena:""
     });
 
-    const handleclik=()=>{
-        localStorage.setItem('usuario', JSON.stringify({ nombre: datos.nombre, contrasena: datos.contrasena }));
-        if(datos.nombre==="Admin" || datos.nombre==="Servicio"){
-            return navigate('/solicitudes');
+    const handleclik = async () => {
+        try {
+            let response = await IniciarsesionCliente(datos.nombre, datos.contrasena);
+    
+            if (response && response.res === true) {
+                alert("Inicio de sesión exitoso");
+                navigate('/reservas');
+            } else if (response && response.res !== true) {
+                response = await IniciarsesionAdmin(datos.nombre, datos.contrasena);
+                if (response && response.res === true) {
+                    alert("Inicio de sesión exitoso");
+                    navigate('/solicitudes');
+                } else {
+                    response = await IniciarsesionProveedor(datos.nombre, datos.contrasena);
+                    if (response && response.res === true) {
+                        alert("Inicio de sesión exitoso");
+                        navigate('/solicitudes');
+                    } else {
+                        alert("No se encontró usuario");
+                    }
+                }
+            }
+            localStorage.setItem('usuario', JSON.stringify({rol:response.user,id:response.id }));
+        } catch (error) {
+            console.error("Ocurrió un error:", error);
+            alert("Ocurrió un error al procesar la solicitud.");
         }
-        
-        navigate('/reservas');
-    }
+    };
+    
 
     return(
         <div className='container-pagelogin'>

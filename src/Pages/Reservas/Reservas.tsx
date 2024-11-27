@@ -55,16 +55,19 @@ const PageReservas = () => {
   };
 
   useEffect(()=>{
-    const usuario=localStorage.getItem('usuario');
-    if (usuario !== null) {
-      const usuarioObj: LoginI = JSON.parse(usuario);
-      
-      if (usuarioObj.nombre === "Admin") setrol(0);
-
-      else setrol(1);
-      
-      
-  }
+    const usuario = localStorage.getItem('usuario');
+  if (usuario !== null) {
+    try {
+      const usuarioObj = JSON.parse(usuario); 
+      if (usuarioObj.rol === "Admin") {
+        setrol(0);
+      } else {
+        setrol(1);
+      }
+    } catch (error) {
+      console.error("Error al parsear el usuario:", error);
+    }
+  }    
     
   },[])
 
