@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ComponentHeaderBar from "../../Components/HeaderBar/HeaderBar";
 import "./Notificaciones.css";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import CNotificaciones from "../../Components/CNotificaciones/CNotificaciones";
+import { generateToken,messaging } from "./Firebase";
+import { onMessage } from "firebase/messaging";
 
 const PageNotificaciones = () => {
     const navigate = useNavigate();
     const [currentPage, setCurrentPage] = useState(0);
-    const itemsPerPage = 3; // Número de notificaciones por página
+    const itemsPerPage = 3; 
 
     const datos = [
         {
@@ -48,6 +50,13 @@ const PageNotificaciones = () => {
         if (currentPage > 0) setCurrentPage(currentPage - 1);
     };
 
+    useEffect(()=>{
+        generateToken();
+        onMessage(messaging,(payload)=>{
+            console.log(payload);
+        });
+    },[])
+
     return (
         <div className="container-notificaciones">
             <ComponentHeaderBar nombre="Notificaciones" />
@@ -59,6 +68,7 @@ const PageNotificaciones = () => {
                 <button onClick={handleNextPage} disabled={currentPage === totalPages - 1}>Siguiente</button>
             </div>
             <div className="container-notificaciones-info">
+        
                 {paginatedData.map((data) => (
                     <CNotificaciones key={data.id} nombre={data.nombre} des={data.des} imagen={data.imagen} />
                 ))}
