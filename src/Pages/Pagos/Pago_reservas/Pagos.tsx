@@ -14,7 +14,7 @@ const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
 
     if (!stripe || !elements) {
@@ -37,7 +37,7 @@ const CheckoutForm = () => {
         console.log("PaymentMethod:", paymentMethod);
         alert("Pago exitoso");
         const {id}=paymentMethod;
-        //Llamar al servicio de la api
+        
     } else {
       console.error("Error:", error);
       
@@ -46,14 +46,17 @@ const CheckoutForm = () => {
 
   return (
     <form style={{width:'20rem',display:'flex',flexDirection:'column',gap:'1rem'}} onSubmit={handleSubmit}>
-      <div>
-        <CardElement className="card-element" />
-      </div>
-     
-      <div style={{display:"flex",justifyContent:'center',alignItems:'center',width:'20rem'}}>
-        <Button width="12rem" nombre="Pagar" color="red" onclick={()=>alert("Pago")} />
-      </div>
-    </form>
+    <div>
+      <CardElement className="card-element" />
+    </div>
+   
+    <div style={{display:"flex",justifyContent:'center',alignItems:'center',width:'20rem'}}>
+      <Button width="12rem" nombre="Pagar" color="red" onclick={()=>alert("Pago")} />
+    </div>
+  </form>
+            
+          
+
   );
 };
 
